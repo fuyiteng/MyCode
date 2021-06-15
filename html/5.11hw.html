@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8">
+        <title>算钱</title>
+        <style>
+            .quantity{
+                margin-top: 15px;
+            }
+
+            .quantity div{
+                color: white;
+                background-color: black;
+                display: inline-block;
+                margin-left: 10px;
+            }
+
+            input::-webkit-outer-spin-button,            
+            input::-webkit-inner-spin-button{                
+                -webkit-appearance: none !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="margin-bottom: 20px;">
+            请输入一个人民币数:
+        </div>
+        <input type="number" id="num" style="margin-bottom: 20px;" value="">
+
+        <button class="btn" style="display: block;">点我计算</button>
+
+        <div class="HTO">
+            <div class="quantity">
+                100元数量:<div class="moneyH"></div>
+            </div>
+            <div class="quantity">
+                50元数量:<div class="moneyFT"></div>
+            </div>
+            <div class="quantity">
+                20元数量:<div class="moneyTT"></div>
+            </div>
+            <div class="quantity">
+                10元数量:<div class="moneyT"></div>
+            </div>
+            <div class="quantity">
+                5元数量:<div class="moneyF"></div>
+            </div>
+            <div class="quantity">
+                1元数量:<div class="moneyO"></div>
+            </div>
+            <div class="quantity">
+                0.5元数量:<div class="moneyFf"></div>
+            </div>
+            <div class="quantity">
+                0.1元数量:<div class="moneyOf"></div>
+            </div>
+        </div>
+        <script>
+            var x = document.getElementById("num");
+
+            document.querySelector(".btn").onclick = function(){
+                var money = x.value;
+                var moneysmall = money.split(".")[1];
+                var moneyH = parseInt(money/100);
+
+                document.getElementsByClassName("moneyH")[0].innerHTML = moneyH+"张100";
+
+                var moneyFT = parseInt((money%100)/50);
+
+                document.getElementsByClassName("moneyFT")[0].innerHTML = moneyFT+"张50";
+
+                var moneyTT = parseInt((money%100%50)/20);
+
+                document.getElementsByClassName("moneyTT")[0].innerHTML = moneyTT+"张20";
+
+                var moneyT = parseInt((money%100%50%20)/10);
+
+                document.getElementsByClassName("moneyT")[0].innerHTML = moneyT+"张10";
+
+                var moneyF = parseInt((money%100%50%20%10)/5);
+
+                document.getElementsByClassName("moneyF")[0].innerHTML = moneyF+"张5";
+
+                var moneyO = parseInt((money%100%50%20%10%5));
+
+                document.getElementsByClassName("moneyO")[0].innerHTML = moneyO+"张1";
+
+                var moneyFf = parseInt(moneysmall/5)
+
+                document.getElementsByClassName("moneyFf")[0].innerHTML = moneyFf+"张0.5";
+
+                var moneyOf = parseInt(moneysmall%5)
+
+                document.getElementsByClassName("moneyOf")[0].innerHTML = moneyOf+"张0.1";
+            }
+        </script>
+    </body>
+</html>

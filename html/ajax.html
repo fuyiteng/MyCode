@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="utf-8">
+	<title>helloVue2</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		.box{
+			display: flex;
+			flex-wrap: wrap;
+			width: 30%;
+		}
+
+		.box img{
+			width: 100%;
+			height: 100px;
+		}
+
+		.box span{
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+		}
+
+		#app{
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			justify-content: space-between;
+		}
+
+		
+	</style>
+</head>
+
+<body>
+	<button id="btn">按钮	</button>
+	<div id="app">
+
+	</div>
+	<script>
+		document.getElementById("btn").onclick = function () {
+			var xhr = new XMLHttpRequest()
+			xhr.open("get", "./film.json", true)
+			xhr.send()
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState === 4) {
+					var data = xhr.responseText
+					var jsonData = JSON.parse(data)
+					var Data = jsonData["data"]["films"]
+					for(let i in Data){
+						document.getElementById("app").innerHTML += `<div class="box"><img src=${Data[i]["cover"]["origin"]}><span>${Data[i]["name"]}</span></div>`;
+					}
+				}
+			}
+		}
+
+	</script>
+</body>
+
+</html>

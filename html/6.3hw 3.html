@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="utf-8">
+	<title>helloVue2</title>
+</head>
+
+<style>
+	*{
+		padding: 0; margin: 0;
+	}
+
+	.box{
+		width: 100%;
+		height: 400px;
+		background-color: purple;
+		padding-top: 150px;
+		padding-left: 40%;
+	}
+
+	.quan{
+		position: relative;
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
+		border: 1px solid white;
+		box-shadow: 1px 0px 10px white ;
+		animation: shadow 1s linear infinite;
+	}
+
+	.quan::after{
+		position: absolute;
+		content: "";
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background-color: white;
+		top: 0px;
+		left: 85px;
+	}
+
+	@keyframes shadow{
+		0%{
+			box-shadow: 1px 0px 10px white ;
+			transform: rotate(0deg);
+		}
+		30%{
+			box-shadow: 1px 0px 40px white ;
+		}
+		50%{
+			box-shadow: 1px 0px 80px white ;
+		}
+		70%{
+			box-shadow: 1px 0px 40px white ;
+		}
+		100%{
+			box-shadow: 1px 0px 10px white ;
+			transform: rotate(360deg);
+		}
+	}
+</style>
+<body>
+	<div class="box">
+		<div class="quan">
+
+		</div>
+	</div>
+	<script>
+		 
+	</script>
+</body>
+
+</html>

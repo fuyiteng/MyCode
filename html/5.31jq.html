@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"> -->
+    <script src="./js/jquery-3.6.0.js"></script>
+    <!-- </script> -->
+    <script>
+        // var index = $(".nav>li").index
+        $(".nav li").mouseenter(function() {
+            var index = $(this).index()
+            console.log(index);
+            $(this).css('display', 'none');
+        })
+    </script>
+</body>
+
+</html>

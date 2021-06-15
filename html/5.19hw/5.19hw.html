@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+	<html lang="zh">
+		<head>
+			<meta charset="utf-8">
+			<title>helloVue2</title>
+		</head>
+		<body>
+		<script src="./js/ArryUtils.js"></script>
+		<script src="./js/ObjectUtils.js"></script>
+		<script>
+			var obj = {A:1,B:2,C:3};
+			var obj2 = {D:4}
+			
+			var obj3 = Object.MyAssign({},obj,obj2)
+
+			obj.A = 9
+			console.log(obj3)
+			console.log(obj)
+			console.log(obj2)
+
+			var arry = [1,2,3,4,5,6,7,8]
+			var arry2 = arry.MySlice(3,-2);
+
+			console.log(arry2)
+			console.log(arry)
+		</script>
+	</body>
+</html>

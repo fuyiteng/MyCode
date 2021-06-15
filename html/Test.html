@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <title>我的啊哈</title>
+        <link rel="stylesheet" href="//at.alicdn.com/t/font_2528786_v65hqkav61e.css">
+        <link rel="stylesheet" type="text/css" href="css/test.css">
+        <link rel="icon" href="img/black.jpg">
+    </head>
+
+    <body>
+        <h3>一个标题</h3>
+        <div id="div1">
+            <div id="div3">
+                <table id="tb1">
+                    <tr>
+                        <th>第一列</th>
+                        <th>第二列</th>
+                        <th>第三列</th>
+                        <th>第四列</th>
+                        <th>第五列</th>
+                    </tr>
+                    <tr>
+                        <td>值1</td>
+                        <td>值2</td>
+                        <td>值3</td>
+                        <td>值4</td>
+                        <td>值5</td>
+                    </tr>
+                    <tr>
+                        <td>值1</td>
+                        <td rowspan="3" style="vertical-align: top;">值2</td>
+                        <td colspan="3">值3</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>值1</td>
+                        
+                        <td>值3</td>
+                        <td>值4</td>
+                        <td>值5</td>
+                    </tr>
+                    <tr>
+                        <td>值1</td>
+                        
+                        <td>值3</td>
+                        <td>值4</td>
+                        <td>值5</td>
+                    </tr>
+                    <tr>
+                        <td>值1</td>
+                        <td>值2</td>
+                        <td>值3</td>
+                        <td>值4</td>
+                        <td>值5</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="div2">
+                <input id="name" type="text">用户名<br>
+                <input id="pw" type = 'password'>密码<br>
+                <button title="点他" id = 'btn' onclick="baidu()">wow</button>
+            </div>
+        </div>
+        <img title="这是黑色" src="img/black.jpg" width="100px" height="100px">
+        <a href="/img/black.jpg">黑色</a>
+        <a href="/img/black.jpg" target="_blank" download="黑色">下载</a>
+        <div style="vertical-align: middle; width: 100px; height: 100px; background-color: black;color:red;">
+            <div style="height: 100px; vertical-align: middle;">awsdawsad</div>
+        </div>
+        <div>
+            <audio controls ="controls">
+                <source src="mp3/周杰伦 - 稻香.flac"/>
+                <source src="mp3/袁咏琳 _ 周杰伦 - 画沙.flac">
+            </audio>
+        </div>
+        <div>
+            <ol class="ol1">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+        <div class="iconfont icon-baicai">1</div>
+    </body>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $("#btn").click(function(){
+            var json = {
+                data:[{
+                    name:"小猪佩奇",
+                    age:"17",
+                    sex:"女",
+                },{
+                    name:"路过的假面骑士",
+                    age:"20",
+                    sex:"男",
+                },{
+                    name:"阿塔尼斯",
+                    age:"300",
+                    sex:"男"
+                },{
+                    name:"詹姆斯雷诺",
+                    age:"35",
+                    sex:"男"
+                }]
+            }    
+            var jsonstr = JSON.stringify(json);
+            var name = document.getElementById("name").value;
+                $.ajax({
+                    url:"http://127.0.0.1:5500/data.html",
+                    // data:{name:"123"},
+                    type:"get",
+                    success:function(){
+                        var name2 =  encodeURI("http://127.0.0.1:5500/data.html?json="+jsonstr);
+                        window.location.href=name2
+                    },
+                    error:function(){
+                        alert("错误")
+                    }
+            })
+        })
+        
+        function baidu(){
+            alert("芜湖");
+        }
+
+    </script>
+</html>

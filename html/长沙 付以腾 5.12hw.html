@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>99乘法表</title>
+        <style>
+            p span{
+                border-top: 1px solid black;
+                border-left: 1px solid black;
+                border-bottom: 1px solid black;
+                border-collapse:collapse;
+                display: inline-block;
+                width: 100px;
+                text-align: center;
+            }
+
+            p span:nth-last-child(1){
+                border-right: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="div1">
+
+        </div>
+        <script>
+            for(var i=1;i<=9;i++){
+                var div1 = document.getElementsByClassName("div1")[0];
+                var str = "<p>"
+                for(var j=1;j<=i;j++){
+                    str += "<span> "+j+"×"+i+"="+i*j+" </span>"
+                }
+                str += "</p>"
+                div1.innerHTML += str;
+            }
+        </script> 
+    </body>
+</html>

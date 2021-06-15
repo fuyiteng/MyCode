@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="utf-8">
+	<title>helloVue2</title>
+</head>
+<style>
+	* {
+		padding: 0;
+		margin: 0;
+	}
+
+	li {
+		list-style: none;
+	}
+
+	/* --------------边框消失------------------ */
+	.divBorder {
+		margin-left: 40%;
+		margin-top: 40px;
+	}
+
+	.ulBorder li {
+		display: inline-block;
+		width: 20px;
+		border-right: 1px solid black;
+		height: 20px;
+		margin-top: 10px;
+	}
+
+	.ulBorder li:nth-last-child(1) {
+		border: none;
+	}
+
+	/* --------------边框消失------------------ */
+
+	/* --------------小米图标------------------ */
+	.miBox {
+		margin-left: 40%;
+	}
+
+	.miA {
+		display: inline-block;
+		height: 60px;
+		width: 60px;
+		background-color: orange;
+		text-align: center;
+		position: relative;
+	}
+
+	/* .mi {
+		position: absolute;
+	}
+
+	.home {
+		position: absolute;
+		top: 0px;
+		right: 100%;
+	} */
+
+	.miA:after {
+		content: "";
+		position: absolute;
+		display: inline-block;
+		transition: transform 0.35s;
+		left: 0px;
+		width: 60px;
+		height: 60px;
+		background: url(./img/mi-logo.png) no-repeat;
+		background-size: cover;
+	}
+
+	.miA::before {
+		content: "";
+		position: absolute;
+		transform: translate(-90px,0px);
+		transition: transform 0.35s;
+		display: inline-block;
+		width: 60px;
+		height: 60px;
+		background: url(./img/mi-home.png) no-repeat;
+		background-size: cover;
+	}
+
+	.miA:hover::before{
+		transform: translate(-30px,0px);
+		transition-delay:0.5s;
+	}
+
+	.miA:hover::after{
+		transform: translate(60px,0px);
+		transition-delay:0.5s;
+	}
+
+	/* --------------小米图标------------------ */
+
+	/* --------------苹果手机------------------ */
+	.applePhone {
+		width: 309px;
+		height: 476px;
+		margin-left: 30%;
+		border: 1px solid rgb(204, 204, 204);
+	}
+
+	.imgPhone {
+		padding-left: 13px;
+	}
+
+	.textPhone {
+		font-size: 15px;
+		margin-left: 10px;
+		margin-bottom: 20px;
+	}
+
+	.salyerPhone {
+		margin-left: 10px;
+	}
+
+	.salyerPhone span {
+		color: red;
+		font-size: 25px;
+		margin-right: 10px;
+	}
+
+	.salyerPhone s {
+		color: gray;
+	}
+
+	.numPhone {
+		margin-left: 10px;
+	}
+
+	.numPhone>span:nth-child(1) {
+		font-size: 15px;
+		color: gray;
+		margin-right: 10px;
+	}
+
+	.numPhone img {
+		vertical-align: middle;
+		margin-right: 10px;
+	}
+
+	.numPhone>span:nth-child(3) {
+		font-size: 15px;
+		color: gray;
+	}
+
+	.red {
+		color: red;
+	}
+
+	.btn {
+		line-height: 50px;
+		height: 50px;
+		font-size: 25px;
+		color: white;
+		text-align: center;
+		vertical-align: middle;
+		width: 289px;
+		margin-left: 10px;
+		margin-top: 10px;
+		background-color: RGB(177, 25, 26);
+	}
+
+	.btn:hover {
+		cursor: pointer
+	}
+
+	/* --------------苹果手机------------------ */
+
+	/* --------------电视彩色------------------ */
+	.discoloration {
+		margin-left: 30%;
+		width: 300px;
+		height: 200px;
+		background: linear-gradient(to right, red 0, red 20%, yellow 20%, yellow 40%, green 40%, green 60%, blue 60%, blue 80%, purple 80%, purple 100%);
+	}
+
+	/* --------------电视彩色------------------ */
+
+	/* --------------太极------------------ */
+	.black-white{
+		margin-left: 30%;
+		border: 1px solid gray;
+		border-radius: 50%;
+		width: 400px;
+		height: 400px;
+		position: relative;
+		background: linear-gradient(to right,black 0,black 50%,white 50%,white 100%);
+	}
+	
+	.black-white::before{
+		content: "";
+		position: absolute;
+		top: 0px;
+		right: 100px;
+		height: 200px;
+		width: 200px;
+		border-radius: 50%;
+		background: radial-gradient(white 0,white 10px,black 10px, black 100%);
+	}
+
+	.black-white::after{
+		content: "";
+		position: absolute;
+		bottom: 0px;
+		right: 100px;
+		height: 200px;
+		width: 200px;
+		border-radius: 50%;
+		background: radial-gradient(black 0,black 10px,white 10px, white 100%);
+	}
+	/* --------------太极------------------ */
+</style>
+
+<body>
+	<div class="divBorder">
+		<ul class="ulBorder">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<ul class="ulBorder">
+			<li>1</li>
+			<li>2</li>
+		</ul>
+		<ul class="ulBorder">
+			<li>1</li>
+		</ul>
+	</div>
+
+	<div class="miBox">
+		<a href="#" class="miA">
+			<!-- <div class="home">
+			</div>
+			<div class="mi">
+			</div> -->
+		</a>
+	</div>
+
+	<div class="applePhone">
+		<div class="imgPhone">
+			<img src="./img/mobile.jpg">
+		</div>
+		<div class="textPhone">
+			<span>Apple苹果iPhone 6s Plus (A1699) 32G 金色 移动联通电信4G手机</span>
+		</div>
+		<div class="salyerPhone">
+			<span>￥6088</span><s>￥6988</s>
+		</div>
+		<div class="numPhone">
+			<span>已售<span class="red">87%</span></span><img src="./img/redtiao.png"><span>剩余<span
+					class="red">29</span>件</span>
+		</div>
+		<div class="btn">
+			立即抢购
+		</div>
+	</div>
+
+	<div class="discoloration">
+
+	</div>
+
+	<div class="black-white">
+
+	</div>
+	<script src="js/jquery-3.6.0.js"></script>
+	<script>
+		// $(function () {
+		// 	$(".miA").hover(function () {
+		// 		$(".mi").stop().fadeOut()
+		// 		$(".home").stop().animate({ right: "0px" }).fadeIn()
+		// 	}, function () {
+		// 		$(".mi").stop().fadeIn()
+		// 		$(".home").stop().animate({ right: "100%" }).fadeOut()
+		// 	})
+		// })
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+</head>
+<style>
+	.cMenu {
+		border: 1px solid red;
+		position: relative;
+		width: 100px;
+	}
+
+	.cMenu li{
+		margin-top: 10px;
+	}
+
+	.cMenuShow {
+		display: block;
+	}
+</style>
+
+<body>
+	<div class="box">
+		<ul class="cMenu">
+			<li>li1</li>
+			<span>这是分割线————————————————————————</span>
+			<li>li2</li>
+			<span>这是分割线————————————————————————</span>
+			<li>li3</li>
+			<span>这是分割线————————————————————————</span>
+			<li>li4</li>
+		</ul>
+	</div>
+	<script src="./js/mylib.js"></script>
+	<script src="./js/jquery-3.6.0.js"></script>
+	<script>
+		// $(".cMenu li").mouseenter(function(){
+		// 	$(this).css("display","none")
+		// })
+		$(".cMenu li").mouseenter(function() {
+            var index = $(this).index()
+            console.log(this);
+            $(this).css('display','none');
+        })
+		// let obj = {
+		// 		fun1 :()=>{
+		// 			console.log(this)
+		// 	}
+		// }
+		// obj.fun1()
+		// console.log("-------------------------")
+		// let box = $(".box")
+		// let cMenu = $(".cMenu")
+		// cMenu.oncontextmenu = function (ev) {
+		// 	ev.preventDefault()
+		// }
+		// console.log("-------------------------")
+		// box.oncontextmenu = function (ev) {
+		// 	ev.preventDefault()
+		// 	cMenu.style.left = ev.clientX + "px"
+		// 	cMenu.style.top = ev.clientY + "px"
+		// 	cMenu.addClass('cMenuShow')
+		// }
+
+		// var arr = [1, 2, 3, 4, 5, 6, 7, "hello"];
+		// for (var i in arr) {
+		// 	console.log(arr[i]);
+		// }
+		// console.log("-------------------------")
+		// for (var j of arr) {
+		// 	console.log(j)
+		// }
+		// console.log("---------------------------")
+		// var arr2 = [[1, 2, 4, 5, 6,], [3, 4], [5, 6]]
+		// for (var x in arr2) {
+		// 	console.log(arr2[x] + arr2[x].length + "/");
+		// 	for (var y = 0; y < arr2[x].length; y++) {
+		// 		console.log(arr2[x][y] + "--" + arr2[x].length)
+		// 	}
+		// }
+		// console.log("==========================");
+		// console.log(sum(17945));
+		// function sum(num) {
+		// 	if (num == 1) { return 1 };
+		// 	return sum(num - 1) + num;
+		// }
+		// console.log("==========================");
+		// var arry = [1, 2, 3, 4, "123", 5, "hello", 1, 2, 3, 4, "wtm", "ssss", 1]
+
+		// for (var i = 0; i < arry.length; i++) {
+		// 	if (typeof arry[i] != "number" && typeof arry[i] != "undefined") {
+		// 		arry[i] = arry[i + 1];
+		// 		for (var j = i + 1; j < arry.length; j++) {
+		// 			arry[j] = arry[j + 1];
+		// 		}
+		// 		i = i - 1
+		// 	}
+		// }
+		// console.log(arry);
+		// console.log("==========================");
+		// function pr() {
+		// 	let i;
+
+		// 	this.setI = function (pram) {
+		// 		i = pram;
+		// 	}
+
+		// 	this.getI = function () {
+		// 		return i;
+		// 	}
+		// }
+
+		// var n = new pr();
+
+		// n.setI(1);
+
+		// console.log(n.getI());
+
+		// class hello {
+		// 	x = 1;
+		// 	y = 2;
+
+		// 	constructor(x, y) {
+		// 		this.x = x;
+		// 		this.y = y;
+		// 	};
+
+		// 	toString() {
+		// 		return ("x= " + this.x + " y= " + this.y)
+		// 	}
+		// }
+
+		// var h = new hello(1, 2);
+		// console.log(h.toString())
+		// console.log("==========================");
+
+		// fun1(fun)
+
+		// function fun1(callback) {
+		// 	callback(1, 2, 3, 4);
+		// }
+
+		// function fun(num1, num2) {
+		// 	console.log(num1, num2)
+		// }
+
+		// console.time("a");
+		// setTimeout(function () {
+		// 	console.timeEnd("a")
+		// 	console.log("hello")
+		// }, 1000)
+
+		// for (var i = 0; i < 400; i++) {
+		// 	console.log("ab")
+		// }
+		// console.log("==========================");
+		// var p1 = new pr()
+		// p1.put = () => {
+		// 	console.log(this);
+		// }
+		// // p1.add()
+		// // p1.put()
+		// function pr() {
+		// 	this.add = () => {
+		// 		console.log(this);
+		// 	}
+		// }
+
+		// function fun() {
+		// 	console.log(this);
+		// }
+		// // fun()
+		// fun.call(p1)
+	</script>
+</body>
+
+</html>

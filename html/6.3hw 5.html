@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="utf-8">
+	<title>helloVue2</title>
+	<style>
+		*{
+			padding: 0; margin: 0;
+		}
+
+		.box{
+			position: relative;
+			height: 300px;
+			width: 300px;
+			border: 1px solid red;
+			margin-left: 30%;
+		}
+
+		.qiu{
+			position: absolute;
+			left: 125px;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: black;
+			animation: upDown 2s linear infinite;
+			animation-timing-function: cubic-bezier(0.5,1,1,1);
+		}
+
+		.shadow{
+			position: absolute;
+			bottom: 0px;
+			left: 125px;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: rgb(200, 200, 200);
+			transform: rotateX(70deg) scale(1.5);
+			animation: shadow 2s linear infinite;
+		}
+
+		@keyframes shadow{
+			0%{
+				background-color: rgb(200, 200, 200);
+				transform: rotateX(70deg) scale(2);
+			}
+			10%{
+				background-color: rgb(180, 180, 180);
+				transform: rotateX(70deg) scale(1.6);
+			}
+			30%{
+				background-color: rgb(160, 160, 160);
+				transform: rotateX(70deg) scale(1.2);
+			}
+			50%{
+				background-color: rgb(140, 140, 140);
+				transform: rotateX(70deg) scale(1);
+			}
+			70%{
+				background-color: rgbrgb(160, 160, 160);
+				transform: rotateX(70deg) scale(1.2);
+			}
+			90%{
+				background-color: rgb(180, 180, 180);
+				transform: rotateX(70deg) scale(1.6);
+			}
+			100%{
+				background-color: rgb(200, 200, 200);
+				transform: rotateX(70deg) scale(2);
+			}
+			
+		}
+
+		@keyframes upDown{
+			0%{
+				top: 0px;
+			}
+			50%{
+				top: 200px;
+			}
+			100%{
+				top: 0px;
+			}
+		}
+
+
+
+	</style>
+</head>
+
+<body>
+	<div class="box">
+		<div class="qiu">
+
+		</div>
+		<div class="shadow">
+	
+		</div>
+	</div>
+	<script>
+
+	</script>
+</body>
+
+</html>

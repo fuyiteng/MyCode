@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn">btn</button>
+    <script>
+        //http://127.0.0.1:5500/12.bom.html
+        //https://fanyi.baidu.com/?aldtype=16047#auto/zh
+        //E:\2021-04-26\2js\day13\code
+        console.log(location)
+        document.querySelector('.btn')
+            .onclick = function () {
+                location.assign('https://fanyi.baidu.com/?aldtype=16047#auto/zh')
+                // location.reload()
+                // location.replace('./11.bom-a.html')
+            }
+
+    </script>
+</body>
+
+</html>

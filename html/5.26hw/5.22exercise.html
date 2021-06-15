@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+	<html lang="zh">
+		<head>
+			<meta charset="utf-8">
+			<title>helloVue2</title>
+		</head>
+
+		<style>
+			ul{
+				padding: 0px;
+			}
+			li{
+				display: inline-block;
+				border: 1px solid red;
+				margin: 5px;
+				width: 120px;
+				height: 30px;
+				text-align: center;
+			}
+
+			li :first-child{
+				line-height: 30px;
+			}
+
+			span{
+				padding: 5px;
+			}
+
+			img{
+				vertical-align: middle;
+				width: 20px;
+				height: 24px;
+			}
+
+			.backcolor{
+				background-color: blue;
+			}
+
+			.fontColor{
+				color: gold;
+			}
+		</style>
+		<body>
+			<button id = "btn">这tm是按钮</button>
+			<div id="user">
+				<ul id="ulUser">
+
+				</ul>
+			</div>
+		<script src="./js/5.22exercise.js"></script>
+		<script>
+			 let userListStr = `董桢   男
+谢龙杰 男
+郭浩  男
+郑冰冰 女
+郑智堂 男
+熊文枫 男
+陶应圳 男
+罗万雄 男
+莫小权 男
+邱日  男
+魏彬炜 男
+刘俊强 男
+郑钊  男
+郭聪  男
+陈劲威 男
+邬中建 男
+谭君臣 男
+宋宏杰 男
+官志昱 男
+郑嘉鑫 男
+韦畅坤 女
+吴洪湛 男
+蔡宇敬 男
+徐魏  男
+孙胜  男
+陈乃进 男
+赵鑫  男
+刘高录 男
+郭光界 男
+邓继雄 男
+黄智鸿 男
+钟国平 男
+陈嘉浩 男
+赵汝亮 男
+覃建奇 男
+刘彧鑫 男
+杜长洪 男
+徐恩丰 男
+ 吴海龙    男
+刘为  男
+ 麻宝意    男
+彭志华 女
+黎雨豪 男
+王潇潇 女
+宋凯莉 女
+李智勇 男
+陈佳旺 男
+张航  男
+李冬莲 女
+曹旭帅 男
+庄锦祥 男
+吴永翔 男
+魏金晖 男
+季伶美 女
+李旋  男
+邓轲  男
+曾凡生 男
+胡建平 男
+杜博宇 男
+龚亮  男
+ 付以腾    男
+胡琪一 男
+毛颃  男
+余超  男
+肖晓楷 男
+贺旭辉 男
+杨剑锋 男
+杨健  男
+张辉勇 男
+许少旭 男
+刘凡  男
+    
+陈旭  男
+吴艳荣 女
+陈杰明 男
+ 万小龙    男
+邓海杰 男
+赖志安 男
+庄锦祥 男
+吴永翔 男
+魏金晖 男`;
+			let arryUser = userListStr.split(/[^\S+]{1,}/);
+			new randomUser(arryUser,"#ulUser","#btn");
+		</script>
+	</body>
+</html>

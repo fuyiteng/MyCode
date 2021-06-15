@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+	<html lang="zh">
+		<head>
+			<meta charset="utf-8">
+			<title>helloVue2</title>
+		</head>
+		<body>
+			<div id="app">
+					用户名:<input type="text" id="userName">
+					<br>
+					密码:<input type="password" id="PW">
+					<br>
+					<input type="checkbox" name="save">五天内保存
+					<br>
+					<button id="btn">点我</button>
+			</div>
+		<script>
+			let userName = document.querySelector("#userName")
+			let PassWord = document.querySelector("#PW")
+			let save = document.getElementsByName("save")
+			let date = new Date()
+			let btn = document.querySelector("#btn")
+
+			{
+				console.log(document.cookie)
+				let coo = document.cookie
+				let arr =[]
+				let obj = {}
+				coo = coo.replace(/\s+/g, '')
+				arr = coo.split(";")
+				for(let i in arr){
+					let sarry = arr[i].split("=")
+					obj[sarry[0]] = sarry[1]
+				}
+				userName.value = obj.userName
+				PassWord.value = obj.PassWord
+				console.log(obj)
+			}
+
+			btn.onclick = function(){
+				date.setTime(date.getTime() + 1000 * 60 * 60 * 24 * 5)
+					if(save[0].checked){
+						document.cookie="userName="+userName.value+";expires="+date.toUTCString();
+						document.cookie="PassWord="+PassWord.value+";expires="+date.toUTCString();
+				}else{
+					document.cookie="userName="+userName.value;
+					document.cookie="PassWord="+PassWord.value;
+				}
+				location.assign("http://127.0.0.1:5500/5.22exercise.html")
+				// location.replace("http://127.0.0.1:5500/5.22exercise.html")
+			}
+		</script>
+	</body>
+</html>

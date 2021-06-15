@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8">
+        <title>数组和递归</title>
+        <style>
+
+            input::-webkit-outer-spin-button,            
+            input::-webkit-inner-spin-button{                
+                -webkit-appearance: none !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="sum">
+            请输入要求和的正整数<input class="number" type="number" min="0">
+            <button class="sumBtn">点我</button>
+            合：<span class="sumnumber"></span>
+        </div>
+
+        <div class="arry">
+            
+        </div>
+
+        <script>
+            var number = document.getElementsByClassName("number")[0];
+            document.getElementsByClassName("sumBtn")[0].onclick = function(){
+                if(number.value<=0){
+                    alert("请输入一个正整数");
+                    number.value=""
+                }else if(number.value>17000){
+                    alert("不能大于17000");
+                    number.value=""
+                }else{
+                    var num = new Number(number.value);
+                    document.getElementsByClassName("sumnumber")[0].innerHTML = sum(num);
+                }
+            }
+
+            var arry = [1,2,3,4,"123",5,"hello",1,2,3,4,"wtm","ssss",1]
+            arrys(arry);
+          
+            function sum(num){
+                if(num ==1){return 1};
+                return sum(num-1)+num;
+            }
+
+            
+            function arrys(arry){
+                for( var i = 0; i<arry.length;i++ ){
+                if( typeof arry[i]!="number" && typeof arry[i] !="undefined"){
+                    arry[i] = arry[i+1];
+                    for(var j = i+1;j<arry.length;j++){
+                            arry[j] = arry[j+1];
+                        }
+                    i=i-1
+                    }
+                }
+                console.log(arry);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+	<html lang="zh">
+		<head>
+			<meta charset="utf-8">
+			<title>方法</title>
+		</head>
+		<body>
+		
+		<script>
+			//随机生成两个整数区间的整数-
+			function MyRandom(max,min){
+				return Math.floor(Math.random()*(max-min)+1)+min
+			}
+			for(var i = 0;i<101;i++){
+				var num = MyRandom(567,129);
+				console.log(num);
+			}
+
+			//将数组反转
+			function MyReverse(arry){
+				console.log(arry)
+				if((arry.length%2)==0){
+					var first = (arry.length/2)-1
+					for(var i = first;i>=0;i--){
+						var num = arry[arry.length-i-1];
+						arry[arry.length-i-1] = arry[i];
+						arry[i] = num;
+					}
+				}else{
+					var first = (arry.length/2)-2+0.5
+					for(var i = first;i>=0;i--){
+						var num = arry[arry.length-i-1];
+						arry[arry.length-i-1] = arry[i];
+						arry[i] = num;
+					}
+				}
+				console.log(arry)
+			}
+
+			var arry = [3,5,3,8,1,2,4,6,7,2,3,4,1,23,1345,123,512,51234,1798009,"a",123,"1asd"]
+
+			MyReverse(arry);
+			
+		</script>
+	</body>
+</html>

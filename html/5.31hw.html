@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+	<html lang="zh">
+		<head>
+			<meta charset="utf-8">
+			<title>helloVue2</title>
+		</head>
+		<style>
+			*{
+				padding: 0px;
+				margin: 0px;
+			}
+
+			li{
+				list-style: none;
+			}
+
+			.box{
+				margin: 100px auto;
+				width: 200px;
+				height: 110px;
+			}
+
+			.ul li{
+				border: 1px solid red;
+				text-align: center;
+			}
+
+			.odd{
+				background-color: yellow;
+			}
+
+			.even{
+				background-color: green;
+			}
+
+			ul li:hover{
+				background-color:red;
+			}
+		</style>
+		<body>
+			<div class="box">
+				<button class="btn">切换</button>
+				<ul class="ul">
+					<li>1这是一条li</li>
+					<li>2这是一条li</li>
+					<li>3这是一条li</li>
+					<li>4这是一条li</li>
+					<li>5这是一条li</li>
+					<li>6这是一条li</li>
+				</ul>
+			</div>
+		<script src="./js/jquery-3.6.0.js"></script>
+		<script>
+			let num = 0;
+			$(function(){
+				$(".ul li:odd").addClass("odd")
+				$(".ul li:even").addClass("even")
+				$(".btn").click(function(){
+					$(".ul li:odd").toggleClass("odd even")
+					$(".ul li:even").toggleClass("even odd")
+				})
+
+				$(".ul li").mouseover(function(){
+					$(this).css("opacity","1").siblings(this).css("opacity","0.4")
+				})
+
+				$(".ul li").mouseout(function(){
+					$(".ul li").css("opacity","1")
+				})
+			})
+		</script>
+	</body>
+</html>

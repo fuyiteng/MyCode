@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/test.css">
+</head>
+
+<body>
+	<p id="p1" onclick="p1color()"></p>
+
+	<table>
+		<tr>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>性别</th>
+		</tr>
+		<tbody id="tb">
+
+		</tbody>
+	</table>
+</body>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	var resulf;
+
+	$("#p1").html(show())
+	tabledata(resulf);
+
+	function tabledata(resulf) {
+		var jsondata = $.parseJSON(resulf)
+		for (var i in jsondata) {
+			var data = jsondata[i];
+			for (var a in data) {
+				var str = "<tr>"
+				str += "<td>" + data[a].name + "</td>"
+				str += "<td>" + data[a].age + "</td>"
+				str += "<td>" + data[a].sex + "</td>"
+				str += "</tr>"
+				$("#tb").append(str);
+			}
+		}
+	}
+
+
+	function show() {
+		var url = window.location.search;
+		console.log(typeof url)
+		url = decodeURI(url)
+		if (url.indexOf("?") != -1) {
+			resulf = url.substr(url.indexOf("=") + 1);
+		}
+		return resulf
+	}
+	var i = 0;
+
+	function p1color() {
+		i++;
+		if ((i % 2) == 0) {
+			document.getElementById("p1").style.color = "#00f";
+		} else {
+			document.getElementById("p1").style.color = "rgb(255,0,0)";
+		}
+	}
+
+</script>
+
+</html>

@@ -1,0 +1,63 @@
+
+#div1{
+    
+    padding-left: 40%;
+}
+
+#div2{
+    position: absolute;
+    top: 10%;
+    left: 15%; 
+    background-color: red;
+}
+
+#div3{
+    width: 15.625rem;
+}
+
+table{
+    width: 360px;
+    border-collapse: collapse;
+}
+
+table th{
+    width: 120px;
+    border: 1px solid rgb(52, 235, 235);    
+}
+
+table tr>td{
+    border: 1px solid blue;
+    text-align: center;
+}
+
+table tbody>td{
+    border: 1px solid blue;
+    text-align: center;
+}
+
+li{
+    width: 48px;
+    height: .75rem;
+    border: 1px solid red;
+    
+}
+
+.ol1>li:nth-child(1){
+    background-image: url("../img/素食八骏图.png");
+    background-position: 0px -48px;
+}
+
+.ol1>li:nth-child(2){
+    background-image: url("../img/素食八骏图.png");
+    background-position: 48px -48px;
+}
+
+.ol1>li:nth-child(3){
+    background-image: url("../img/素食八骏图.png");
+    background-position: 0px -96px;
+}
+
+.ol1>li:nth-child(4){
+    background-image: url("../img/素食八骏图.png");
+    background-position: 48px -96px;
+}

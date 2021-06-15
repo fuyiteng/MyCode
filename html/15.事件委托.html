@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul>li:hover {
+            background: gray;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" class="uInput" />
+    <ul class="list">
+        <li>red</li>
+        <li>blue</li>
+    </ul>
+
+    <h2 class="show"></h2>
+
+    <script>
+        let uInput = document.querySelector('.uInput')
+        let list = document.querySelector('.list')
+        let show = document.querySelector('.show')
+        uInput.onchange = function (ev) {
+            let li = document.createElement('li')
+            li.innerText = this.value
+            list.appendChild(li)
+            this.value = ''
+        }
+
+        //事件委托，
+        list.onclick = function(ev){
+            ev.stopPropagation() // 阻止事件冒泡
+            if('LI' === ev.target.nodeName){
+            	console.log(ev.target.nodeName)
+                show.innerText = ev.target.innerText
+            }
+        }
+
+    </script>
+</body>
+
+</html>

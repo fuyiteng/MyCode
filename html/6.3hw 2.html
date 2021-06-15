@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="utf-8">
+	<title>helloVue2</title>
+</head>
+<style>
+	.jiqiren{
+		position: absolute;
+		width: 167px; height: 197px;
+		background: url(./img/robot.png) no-repeat;
+		animation: zhuanshen 1s linear infinite;
+	}
+
+	@keyframes zhuanshen{
+		0%{
+			left: 0px;
+		}
+		49%{
+			transform: rotateY(0deg);
+		}
+		50%{
+			left: 500px;
+			transform: rotateY(180deg);
+		}
+		99%{
+			transform: rotateY(180deg);
+		}
+		100%{
+			left: 0px;
+		}
+	}
+</style>
+<body>
+	<div class="jiqiren">
+
+	</div>
+	<script>
+	</script>
+</body>
+
+</html>

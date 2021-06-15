@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="utf-8">
+	<title>helloVue2</title>
+</head>
+<style>
+	* {
+		padding: 0;
+		margin: 0;
+	}
+
+	li {
+		list-style-type: none;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+
+	.head li {
+		height: 31px;
+		font-size: 18px;
+		color: red;
+	}
+
+	.head li span {
+		border-bottom: 1px solid red;
+	}
+
+	.box li {
+		margin-bottom: 15px;
+	}
+
+	.liHead {
+		color: rgb(102, 102, 102);
+		position: relative;
+		height: 43px;
+		background-color: RGB(243, 243, 243);
+	}
+
+	.liHeadDivL {
+		display: inline-block;
+		padding-top: 13px;
+	}
+
+	.liHeadDivR {
+		display: inline-block;
+		position: absolute;
+		right: 10px;
+	}
+
+	.liHeadDivR>ul li {
+		display: inline-block;
+		margin-right: 106px;
+		padding-top: 13px;
+	}
+
+	.liHeadDivL>span {
+		margin-left: 81px;
+	}
+
+	.liMind {
+		position: relative;
+		height: 173px;
+		border-top: 2px solid RGB(170, 170, 170);
+		border-bottom: 1px solid RGB(241, 241, 241);
+	}
+
+	.liMindDivL {
+
+		padding-top: 21px;
+	}
+
+	.liMindDivL input {
+		float: left;
+	}
+
+	.shSpan {
+		padding: 5px;
+		border: 1px solid rgb(204, 204, 204);
+		position: absolute;
+		width: 90px;
+		height: 90px;
+		left: 63px;
+	}
+
+	.shSpan>img {
+		width: 90px;
+		height: 90px;
+	}
+
+	.shSpanText {
+		color: rgb(102, 102, 102);
+		position: absolute;
+		left: 173px;
+		width: 203px;
+	}
+
+	.liMindDivR {
+		position: absolute;
+		right: 10px;
+	}
+
+	.liMindDivR>ul li {
+		display: inline-block;
+		margin-right: 94px;
+		padding-top: 13px;
+	}
+
+	.liMindDivR>ul li>input {
+		width: 40px;
+	}
+
+	.liLast {
+		position: relative;
+		height: 50px;
+		border-top: 1px solid RGB(241, 241, 241);
+		border-bottom: 1px solid RGB(241, 241, 241);
+	}
+
+	.liLastDivL {
+		padding-top: 20px;
+		display: inline-block;
+	}
+
+	.liLastDivR {
+		display: inline-block;
+		position: absolute;
+		right: 23px;
+	}
+
+	.salyerBtn {
+		color: white;
+		line-height: 52px;
+		display: inline-block;
+		width: 94px;
+		height: 52px;
+		text-align: center;
+		vertical-align: middle;
+		background-color: red;
+	}
+
+	.salyerBtn:hover {
+		cursor: pointer
+	}
+
+	.sumSalyer {
+		margin-right: 10px;
+		display: none;
+	}
+
+	.sumSalyerNum {
+		color: red;
+	}
+
+	.checkedNum {
+		display: none;
+		margin-right: 10px;
+	}
+
+	.shNum {
+		color: red;
+	}
+</style>
+
+<body>
+	<div class="head">
+		<ul>
+			<li><span>全部商品</span></li>
+		</ul>
+	</div>
+	<div class="box">
+		<ul>
+			<li class="liHead">
+				<div class="liHeadDivL">
+					<input type="checkbox" name="All">全选
+					<span>商单</span>
+				</div>
+				<div class="liHeadDivR">
+					<ul>
+						<li>单价</li>
+						<li>数量</li>
+						<li>小计</li>
+						<li>操作</li>
+					</ul>
+				</div>
+			</li>
+			<li class="liMind">
+				<div class="liMindDivL">
+					<input type="checkbox" name="sh" value="0">
+					<span class="shSpan">
+						<img src="./img/black.jpg">
+					</span>
+					<span class="shSpanText">
+						【这是一个】黑色这是一个黑色这是一个黑色heis1
+					</span>
+				</div>
+				<div class="liMindDivR">
+					<ul>
+						<li>￥<span id="salyer0">12.60</span></li>
+						<li><input type="number" id="0" min="0" value="0"></li>
+						<li id="oneSumSalyer0"></li>
+						<li><a>删除</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="liMind">
+				<div class="liMindDivL">
+					<input type="checkbox" name="sh" value="1">
+					<span class="shSpan">
+						<img src="./img/black.jpg">
+					</span>
+					<span class="shSpanText">
+						【这是一个】黑色这是一个黑色这是一个黑色heis1
+					</span>
+				</div>
+				<div class="liMindDivR">
+					<ul>
+						<li>￥<span id="salyer1">15.40</span></li>
+						<li><input type="number" id="1" min="0" value="0"></li>
+						<li id="oneSumSalyer1"></li>
+						<li><a>删除</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="liMind">
+				<div class="liMindDivL">
+					<input type="checkbox" name="sh" value="2">
+					<span class="shSpan">
+						<img src="./img/black.jpg">
+					</span>
+					<span class="shSpanText">
+						【这是一个】黑色这是一个黑色这是一个黑色heis1
+					</span>
+				</div>
+				<div class="liMindDivR">
+					<ul>
+						<li>￥<span id="salyer2">20.00</span></li>
+						<li><input type="number" id="2" min="0" value="0"></li>
+						<li id="oneSumSalyer2"></li>
+						<li><a>删除</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="liLast" class="liLastDivL">
+				<div class="liLastDivL">
+					<input type="checkbox" name="All">全选
+				</div>
+				<div class="liLastDivR">
+					<span class="checkedNum">已选择<span class="shNum"></span>件商品</span>
+					<span class="sumSalyer">总价:</span><span class="sumSalyerNum"></span>
+					<span class="salyerBtn">去结算</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<script src="./js/jquery-3.6.0.js"></script>
+	<script>
+		$(function(){
+			
+			xiaoji(0)
+			//获取数量计算小计
+			function xiaoji(id){
+				let strone = "#salyer"+id
+				let salyerone = "#"+id
+				let salyer = $(strone).text()
+				let shNum = $(salyerone).val()
+				return salyer*shNum
+			}
+
+			function saylerSum(){
+				//每次调用清除总价格
+				$(".sumSalyerNum").html("")
+				//每次调用清空总数量
+				$(".shNum").html("")
+				let sum = 0;
+				//计算总价 并显示下发总数量和总价
+				//通过checked选中的计算
+				$("input[name='sh']:checked").each(function(i,e){
+						let index = $(e).val();
+						sum += +$("#oneSumSalyer"+index).text();
+				})
+				console.log($("input[name='sh']:checked").length)
+				//显示总价格
+				$(".sumSalyer").show()
+				//显示数量
+				$(".checkedNum").show()
+				//数量加入元素
+				$(".shNum").append($("input[name='sh']:checked").length)
+				//总价格加入元素
+				$(".sumSalyerNum").append(sum)
+			}
+			//给input加入一个监视器 只要val发生改动就触发
+			$(".liMindDivR input").change(function(){
+			
+				let index = $(this).prop("id")
+				//给小计赋值
+				$("#oneSumSalyer"+index).html("")
+				//调用xiaoji方法
+				$("#oneSumSalyer"+index).append(xiaoji(index))
+				saylerSum()
+
+			});
+			
+			//设置全选
+			//选择name等于ALL的checked
+			$("input[name='All']").change(function(){
+				//如果选中该checked
+				//prop获取checked的值
+				if($(this).prop("checked")){
+					//所有的name是ALL和sh的checke全部设置为选中状态
+					$("input[name='sh']").prop("checked", true);
+					$("input[name='All']").prop("checked", true);
+				}else{
+					//如果没有选中则name是ALL和sh的全部取消选中
+					$("input[name='sh']").prop("checked", false);
+					$("input[name='All']").prop("checked", false);
+				}
+				saylerSum()
+			})
+
+			//设置当手动全选后全选自动选中
+			//选取name是sh的checked
+			$("input[name='sh']").change(function(){
+				saylerSum()
+				//用总元素数量和选中的元素数量做比较
+				if($("input[name='sh']").length == $("input[name='sh']:checked").length){
+					//如果相等则勾选ALL
+					$("input[name='All']").prop("checked", true);
+				}else{
+					//如果不相等则取消ALL的勾选
+					$("input[name='All']").prop("checked", false);
+				}
+			})
+		})
+	</script>
+</body>
+
+</html>

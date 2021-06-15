@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+	<html lang="zh">
+		<head>
+			<meta charset="utf-8">
+			<title>helloVue2</title>
+		</head>
+		<style>
+			*{
+				padding: 0px; 
+				margin: 0px;
+			}
+
+			li {list-style-type:none;}
+
+			.divNone{
+				display: none;
+			}
+
+			.divShow{
+				display:block;
+			}
+
+			.headDiv{
+				width: 100%;
+				height: 50px;
+				border-bottom: 1px solid rgb(75, 160, 160);
+				background-color: aqua;
+			}
+
+			.downDiv{
+				width: 500px;
+				height: 200px;
+				background-color: blue;
+				position: absolute;
+			}
+
+			.downDivL{
+				display: inline-block;
+				border-right: 1px solid black;
+				width: 50%;
+				height: ;
+			}
+
+			.downDivR{
+				position: absolute;
+				display: inline-block;
+				right: 0px;
+				width: 50%;
+			}
+
+			.downDivL>ul{
+				width: 50px;
+				display: inline-block;
+			}
+
+			.downDivR>ul{
+				margin-left: 20px;
+				width: 50px;
+				display: inline-block;
+			}
+
+			#btnL{
+				position: absolute;
+				top: 20%;
+				left: 20%;
+			}
+
+			#btnR{
+				position: absolute;
+				top: 50%;
+				right: 20%;
+			}
+			.headLi{
+				display: inline-block;
+				margin-right: 100px;
+				border: 1px solid black;
+				height: 50px;
+				line-height: 50px;
+				vertical-align: middle;
+				position: relative;
+			}
+
+			.headLi:hover{
+				cursor: pointer;
+			}
+		</style>
+		<body>
+			<div class="headDiv">
+				<ul id="headUl">
+					<li class="headLi">
+						第一个选项
+					</li>
+					<li class="headLi">第二个选项</li>
+					<li class="headLi">第三个选项</li>
+					<li class="headLi">第四个选项</li>
+					<li class="headLi">第五个选项</li>
+				</ul>
+				<div class="downDiv divNone">
+					<div class="downDivL">
+						<ul class="checkboxL">
+							<li><input type="checkbox" name="left" value="左一">左一</li>
+							<li><input type="checkbox" name="left" value="左二">左二</li>
+							<li><input type="checkbox" name="left" value="左三">左三</li>
+							<li><input type="checkbox" name="left" value="左四">左四</li>
+						</ul>
+						<button id="btnL">往右</button>
+					</div>
+					<div class="downDivR">
+						<ul class="checkboxR">
+							<li><input type="checkbox" name="right" value="右一">右一</li>
+							<li><input type="checkbox" name="right" value="右二">右二</li>
+							<li><input type="checkbox" name="right" value="右三">右三</li>
+							<li><input type="checkbox" name="right" value="右四">右四</li>
+						</ul>
+						<button id="btnR">往左</button>
+					</div>
+				</div>
+			</div>
+		<script src="./js/5.25hw.js"></script>
+		<script>
+			let headUl = $("#headUl")
+			let downDiv = $("#downDiv")
+			let checkboxL = $(".checkboxL")
+			let checkboxR = $(".checkboxR")
+			Mymouseover(headUl,downDiv)
+			Mymouseout(headUl,downDiv)
+
+			$("#btnL").onclick = function(){
+				let obj =  document.getElementsByName("left")
+				for(let i =0 ; i<obj.length;i++){
+					if(obj[i].checked){
+						let liR = document.createElement("li")
+						let inputR = document.createElement("input")
+						inputR.type="checkbox";
+						inputR.name="right";
+						inputR.value=obj[i].value;
+						liR.appendChild(inputR)
+						liR.innerHTML += obj[i].value
+						checkboxR.appendChild(liR)
+						checkboxL.removeChild(checkboxL.getElementsByTagName("li")[i])
+						i--
+					}
+				}
+			}
+
+			$("#btnR").onclick = function(){
+				let right =  document.getElementsByName("right")
+				for(let i =0 ; i<right.length;i++){
+					if(right[i].checked){
+						let liL = document.createElement("li")
+						let inputL = document.createElement("input")
+						inputL.type="checkbox";
+						inputL.name="left";
+						inputL.value=right[i].value;
+						liL.appendChild(inputL)
+						liL.innerHTML += right[i].value
+						checkboxL.appendChild(liL)
+						checkboxR.removeChild(checkboxR.getElementsByTagName("li")[i])
+						i--
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

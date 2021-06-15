@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="utf-8">
+	<title>helloVue2</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		.box {
+			width: 332px;
+			height: 133px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.text {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 332px;
+			height: 133px;
+			opacity: 0;
+		}
+
+		.tu{
+			position: relative;
+			height: 32px;
+			width: 32px;
+			overflow: hidden;
+			left: 40%;
+			top: 20px;
+		}
+
+		.tu::before{
+			position: absolute;
+			top: 32px;
+			content: "";
+			display: block;
+			background: url("./img/zoomico.png");
+			background-position: 0px 32px;
+			width: 32px;
+			height: 32px;
+		}
+
+		.tu::after{
+			position: absolute;
+			top:0px;
+			content: "";
+			display: block;
+			background: url("./img/zoomico.png");
+			background-position: 0px 0px;
+			width: 32px;
+			height: 32px;
+		}
+		
+		.box:hover .text {
+			animation: textShow 2s linear forwards;
+		}
+
+		.box:hover img {
+			animation: imgSize 1s linear forwards;
+		}
+
+		.tu:hover::after{
+			animation: xiaotu1 0.5s linear forwards;
+		}
+
+		.tu:hover::before{
+			animation: xiaotu2 0.5s linear forwards;
+		}
+
+		@keyframes xiaotu1 {
+			100%{
+				top:-32px
+			}
+		}
+
+		@keyframes xiaotu2 {
+			100%{
+				top:0px
+			}
+		}
+
+		@keyframes imgSize {
+			100% {
+				transform: scale(1.5) skewX(-45deg);
+			}
+		}
+
+		@keyframes textShow {
+			100% {
+				opacity: 1;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="box">
+		<img src="./img/worksimg4.jpg">
+		<span class="text">这是一段话<div class="tu"></div></span>
+	</div>
+	<script>
+	</script>
+</body>
+
+</html>
